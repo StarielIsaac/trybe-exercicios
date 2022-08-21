@@ -1,107 +1,50 @@
-# Exercícios 
+# Exercícios
 
-## 1. Faça cinco programas, um para cada operação aritmética básica. Seu programa deve ter duas variáveis, a e b, definidas no começo com os valores que serão operados. Faça programas para:
+## Leia atentamente os enunciados e faça o que se pede! Você irá utilizar esse array para realizar os exercícios do 1 ao 7:
 
-* Adição
-* Subtração
-* Multiplicação
-* Divisão
-* Módulo
+`let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];`
 
-## 2 - Faça um programa que retorne o maior de dois números. Defina no começo do programa duas variáveis com os valores que serão comparados.
+1. Nesse primeiro exercício, percorra o array imprimindo todos os valores nele contidos com a função console.log();
 
-## 3 - Faça um programa que retorne o maior de três números. Defina no começo do programa três variáveis com os valores que serão comparados.
+2. Para o segundo exercício, você deve somar todos os valores contidos no array e imprimir o resultado;
 
-## 4 - Faça um programa que, dado um valor definido numa variável, retorne "positive" se esse valor for positivo, "negative" se for negativo e "zero" caso contrário.
+3. Para o terceiro exercício, calcule e imprima a média aritmética dos valores contidos no array;
+   A média aritmética é o resultado da soma de todos os elementos divido pelo número total de elementos.
 
-## 5 - Faça um programa que defina três variáveis com os valores dos três ângulos internos de um triângulo. Retorne true se os ângulos representarem os ângulos de um triângulo e false caso contrário.
+4. Com o mesmo código do exercício anterior, caso valor final seja maior que 20, imprima a mensagem: "valor maior que 20". Caso não seja, imprima a mensagem: "valor menor ou igual a 20";
 
-* Para os ângulos serem de um triângulo válido, a soma dos três deve ser 180 graus. Caso os ângulos estejam inválidos, o programa deve retornar uma mensagem de erro.
+5. Utilizando for, descubra qual o maior valor contido no array e imprima-o;
 
-## 6 - Escreva um programa que receba o nome de uma peça de xadrez e retorne os movimentos que ela faz.
+6. Descubra quantos valores ímpares existem no array e imprima o resultado. Caso não exista nenhum, imprima a mensagem: "nenhum valor ímpar encontrado";
 
-* Como desafio, faça o programa funcionar tanto se receber o nome de uma peça com letras maiúsculas quanto com letras minúsculas, sem aumentar a quantidade de condicionais.
+7. Utilizando for, descubra qual o menor valor contido no array e imprima-o;
 
-* Como dica, você pode pesquisar uma função que faz uma string ficar com todas as letras minúsculas (lower case).
+8. Utilizando for, crie uma array que vá de 1 até 25 e imprima o resultado;
 
-* Se a peça passada for inválida, o programa deve retornar uma mensagem de erro.
+9. Utilizando o array criado no exercício anterior imprima o resultado da divisão de cada um dos elementos por 2.
 
-* Exemplo: bishop -> diagonals
+## Bônus
 
-## 7 - Escreva um programa que converte uma nota dada em porcentagem (de 0 a 100) em conceitos de A a F. Siga essas regras:
+Para os próximos dois exercícios [leia este artigo](http://devfuria.com.br/logica-de-programacao/introducao-ao-algoritmo-de-ordenacao-bubble-sort/) e tente entender o que está acontencedo no código abaixo:
 
-* Porcentagem >= 90 -> A
-* Porcentagem >= 80 -> B
-* Porcentagem >= 70 -> C
-* Porcentagem >= 60 -> D
-* Porcentagem >= 50 -> E
-* Porcentagem < 50 -> F
+```
+for (let i = 1; i < array.length; i++) {
+  for (let j = 0; j < i; j++) {
+    if (array[i] < array[j]) {
+      let position = array[i];
+      array[i] = array[j];
+      array[j] = position;
+    }
+  }
+}
+```
 
-* O programa deve retornar uma mensagem de erro e encerrar se a nota passada for menor que 0 ou maior que 100. 
+1. Ordene o array numbers em ordem crescente e imprima seus valores;
 
-## 8 - Escreva um programa que defina três números em variáveis no seu começo e retorne true se pelo menos uma das três for par. Caso contrário, ele retorna false.
+2. Ordene o array numbers em ordem decrescente e imprima seus valores;
 
-* **Bonus**: use somente um if. 
+3. Agora você irá criar um novo array a partir do array numbers, sem perdê-lo. Cada valor do novo array deverá ser igual ao valor correspondente no array numbers multiplicado pelo seguinte. Por exemplo: o primeiro valor do novo array deverá ser 45, pois é a multiplicação de 5 (primeiro valor) e 9 (valor seguinte). Já o segundo valor do novo array deverá ser 27, pois é a multiplicação de 9 (segundo valor) e 3 (valor seguinte), e assim por diante. Caso não haja próximo valor, a multiplicação deverá ser feita por 2. Faça isso utilizando o for e o método push. O resultado deve ser o array abaixo:
 
-## 9 - Escreva um programa que defina três números em variáveis no seu começo e retorne true se pelo menos uma das três for ímpar. Caso contrário, ele retorna false.
+`[45, 27, 57, 1330, 560, 800, 200, 70, 945, 54]`
 
-* **Bonus**: use somente um if.
-
-## 10 - Escreva um programa que se inicie com dois valores em duas variáveis diferentes: o custo de um produto e seu valor de venda. A partir dos valores, calcule quanto de lucro (valor de venda descontado o custo do produto) a empresa terá ao vender mil desses produtos.
-
-* Atente que, sobre o custo do produto, incide um imposto de 20%.
-
-* Seu programa também deve emitir uma mensagem de erro e encerrar caso algum dos seus valores de entrada seja menor que zero.
-
-* O lucro de um produto é o resultado da subtração do valor de venda pelo custo do mesmo, sendo que o imposto de 20% também faz parte do valor de custo.
-
-  * valorCustoTotal = valorCusto + impostoSobreOCusto
-
-  * lucro = valorVenda - valorCustoTotal (lucro de um produto)
-
-## 11 - Uma pessoa que trabalha de carteira assinada no Brasil tem descontados de seu salário bruto o INSS e o IR. Faça um programa que, dado um salário bruto, calcule o líquido a ser recebido.
-
-* A notação para um salário de R$1500,10, por exemplo, deve ser 1500.10. Para as faixas de impostos, use as seguintes referências:
-
-### * INSS
-
-  * Salário bruto até R$ 1.556,94: alíquota de 8%
-
-  * Salário bruto de R$ 1.556,95 a R$ 2.594,92: alíquota de 9%
-
-  * Salário bruto de R$ 2.594,93 a R$ 5.189,82: alíquota de 11%
-
-  * Salário bruto acima de R$ 5.189,82: alíquota máxima de R$ 570,88
-
-### * IR
-
-  * Até R$ 1.903,98: isento de imposto de renda
-
-  * De R$ 1.903,99 a 2.826,65: alíquota de 7,5% e parcela de R$ 142,80 a deduzir do imposto
-
-  * De R$ 2.826,66 a R$ 3.751,05: alíquota de 15% e parcela de R$ 354,80 a deduzir do imposto
-
-  * De R$ 3.751,06 a R$ 4.664,68: alíquota de 22,5% e parcela de R$ 636,13 a deduzir do imposto
-
-  * Acima de R$ 4.664,68: alíquota de 27,5% e parcela de R$ 869,36 a deduzir do imposto.
-
-**Exemplo**: Uma pessoa possui o salário bruto de R$ 3.000,00. O cálculo será:
-
-  * O salário bruto está entre R$ 2.594,93 e R$ 5.189,82, então sua alíquota para INSS é de 11%. O INSS será 11% de R$ 3.000, ou seja,R$ 330,00.
-
-  * Para descobrir o salário-base, subtraia do salário bruto a alíquota do INSS: R$ 3.000,00 - R$ 330,00 = R$ 2.670,00.
-
-  * Para pegar o valor do IR, temos um salário (já deduzido o INSS) entre R$ 1.903,99 e 2.826,65, sendo a alíquota, então, de 7.5% com parcela de R$ 142,80 a deduzir do imposto. Assim, temos:
-
-  * R$ 2.670,00: salário com INSS já deduzido;
-
-  * 7.5%: alíquota de imposto de renda;
-
-  * R$ 142,00 parcela a se deduzir do imposto.
-
-  * Fazendo a conta, temos: (7,5% de R$ 2.670,00) - R$ 142,80 = R$ 57,45
-
-  * O último cálculo para conseguir o salário líquido é R$ 2.670,00 - R$ 57,45 (salário-base - valor IR) = R$ 2.612,55.
-
-Resultado: R$ 2.612,55. 
 

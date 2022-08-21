@@ -1,107 +1,131 @@
-# Exercícios 
+# Exercícios
 
-## 1. Faça cinco programas, um para cada operação aritmética básica. Seu programa deve ter duas variáveis, a e b, definidas no começo com os valores que serão operados. Faça programas para:
+## Parte I - Objetos e For/In
 
-* Adição
-* Subtração
-* Multiplicação
-* Divisão
-* Módulo
+* Usando o objeto abaixo, faça os exercícios a seguir:
 
-## 2 - Faça um programa que retorne o maior de dois números. Defina no começo do programa duas variáveis com os valores que serão comparados.
+```javascript
+let info = {
+  personagem: "Margarida",
+  origem: "Pato Donald",
+  nota: "Namorada do personagem principal nos quadrinhos do Pato Donald",
+};
+```
 
-## 3 - Faça um programa que retorne o maior de três números. Defina no começo do programa três variáveis com os valores que serão comparados.
+1. Imprima no console uma mensagem de boas-vindas para a personagem acima, incluindo seu nome.
+  * Valor esperado no console: Bem-vinda, Margarida
 
-## 4 - Faça um programa que, dado um valor definido numa variável, retorne "positive" se esse valor for positivo, "negative" se for negativo e "zero" caso contrário.
+2. Insira no objeto uma nova propriedade com o nome de chave "recorrente" e o valor "Sim" e, em seguida, imprima o objeto no console.
+  * Valor esperado no console:
 
-## 5 - Faça um programa que defina três variáveis com os valores dos três ângulos internos de um triângulo. Retorne true se os ângulos representarem os ângulos de um triângulo e false caso contrário.
+```javascript
+{
+  personagem: 'Margarida',
+  origem: 'Pato Donald',
+  nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
+  recorrente: 'Sim'
+};
+```
 
-* Para os ângulos serem de um triângulo válido, a soma dos três deve ser 180 graus. Caso os ângulos estejam inválidos, o programa deve retornar uma mensagem de erro.
+3. Faça um for/in que mostre todas as chaves do objeto.
+  * Valor esperado no console:
 
-## 6 - Escreva um programa que receba o nome de uma peça de xadrez e retorne os movimentos que ela faz.
+```
+personagem
+origem
+nota
+recorrente
+```
 
-* Como desafio, faça o programa funcionar tanto se receber o nome de uma peça com letras maiúsculas quanto com letras minúsculas, sem aumentar a quantidade de condicionais.
+4. Faça um novo for/in, mas agora mostre todos os valores das chaves do objeto.
+  * Valor esperado no console:
 
-* Como dica, você pode pesquisar uma função que faz uma string ficar com todas as letras minúsculas (lower case).
+```
+Margarida
+Pato Donald
+Namorada do personagem principal nos quadrinhos do Pato Donald
+Sim
+```
 
-* Se a peça passada for inválida, o programa deve retornar uma mensagem de erro.
+5. Agora, defina um segundo objeto com a mesma estrutura (as mesmas chaves) do primeiro e os seguintes valores: "Tio Patinhas", "Christmas on Bear Mountain, Dell's Four Color Comics #178", "O último MacPatinhas", "Sim".
+  * Valor esperado no console:
 
-* Exemplo: bishop -> diagonals
+```
+Margarida e Tio Patinhas
+Pato Donald e Christmas on Bear Mountain, Dell's Four Color Comics #178
+Namorada do personagem principal nos quadrinhos do Pato Donald e O último MacPatinhas
+Ambos recorrentes // Atenção para essa última linha!
+```
 
-## 7 - Escreva um programa que converte uma nota dada em porcentagem (de 0 a 100) em conceitos de A a F. Siga essas regras:
+## Parte II - Funções
 
-* Porcentagem >= 90 -> A
-* Porcentagem >= 80 -> B
-* Porcentagem >= 70 -> C
-* Porcentagem >= 60 -> D
-* Porcentagem >= 50 -> E
-* Porcentagem < 50 -> F
+* Agora vamos fazer um exercício que vai deixar claro como funções com responsabilidades bem definidas deixam o código mais bem escrito.
 
-* O programa deve retornar uma mensagem de erro e encerrar se a nota passada for menor que 0 ou maior que 100. 
+1. Crie uma função que receba uma string e retorne true se for um palíndromo, ou false, se não for.
+  * Exemplo de palíndromo: arara.
+  * verificaPalindrome("arara");
+  * Retorno esperado: true
+  * verificaPalindrome("desenvolvimento");
+  * Retorno esperado: false
 
-## 8 - Escreva um programa que defina três números em variáveis no seu começo e retorne true se pelo menos uma das três for par. Caso contrário, ele retorna false.
+2. Crie uma função que receba um array de inteiros e retorne o índice do maior valor.
+  * Array de teste: [2, 3, 6, 7, 10, 1];.
+  * Valor esperado no retorno da função: 4.
 
-* **Bonus**: use somente um if. 
+3. Crie uma função que receba um array de inteiros e retorne o índice do menor valor.
+  * Array de teste: [2, 4, 6, 7, 10, 0, -3];.
+  * Valor esperado no retorno da função: 6.
 
-## 9 - Escreva um programa que defina três números em variáveis no seu começo e retorne true se pelo menos uma das três for ímpar. Caso contrário, ele retorna false.
+4. Crie uma função que receba um array de nomes e retorne o nome com a maior quantidade de caracteres.
+  * Array de teste: ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];.
+  * alor esperado no retorno da função: Fernanda.
 
-* **Bonus**: use somente um if.
+5. Crie uma função que receba um array de inteiros e retorne o inteiro que mais se repete.
+  * Array de teste: [2, 3, 2, 5, 8, 2, 3];.
+  * Valor esperado no retorno da função: 2.
 
-## 10 - Escreva um programa que se inicie com dois valores em duas variáveis diferentes: o custo de um produto e seu valor de venda. A partir dos valores, calcule quanto de lucro (valor de venda descontado o custo do produto) a empresa terá ao vender mil desses produtos.
+6. Crie uma função que receba um número inteiro N e retorne o somatório de todos os números de 1 até N.
+  * Valor de teste: N = 5.
+  * Valor esperado no retorno da função: 1+2+3+4+5 = 15.
 
-* Atente que, sobre o custo do produto, incide um imposto de 20%.
+7. Crie uma função que receba uma string word e outra string ending. Verifique se a string ending é o final da string word. Considere que a string ending sempre será menor que a string word.
+  * Valor de teste: "trybe" e "be"
+  * Valor esperado no retorno da função: true
+  * verificaFimPalavra("trybe", "be");
+  * Retorno esperado: true
+  * verificaFimPalavra("joaofernando", "fernan");
+  * Retorno esperado: false
 
-* Seu programa também deve emitir uma mensagem de erro e encerrar caso algum dos seus valores de entrada seja menor que zero.
+## Bônus
 
-* O lucro de um produto é o resultado da subtração do valor de venda pelo custo do mesmo, sendo que o imposto de 20% também faz parte do valor de custo.
+1. (Difícil) Faça um programa que receba uma string em algarismos romanos e retorne o número que a string representa.
+  * Atenção! Esse exercício já apareceu no processo seletivo de uma grande multinacional!
+  * Dicas:
+    * Uma string é um array de caracteres, então cada elemento do array é uma letra.
+    * O valor de cada numeral romano é:
 
-  * valorCustoTotal = valorCusto + impostoSobreOCusto
+    ```
+         | I   | 1    |
+     | --- | ---- |
+     | IV  | 4    |
+     | V   | 5    |
+     | IX  | 9    |
+     | X   | 10   |
+     | XL  | 40   |
+     | L   | 50   |
+     | XC  | 90   |
+     | C   | 100  |
+     | CD  | 400  |
+     | D   | 500  |
+     | CM  | 900  |
+     | M   | 1000 |
+    ```
 
-  * lucro = valorVenda - valorCustoTotal (lucro de um produto)
+    * Que tal criar um objeto que associe cada letra a um numeral para fácil consulta?
+    * **Atenção! Quando você tem um número pequeno à direita de um número grande, eles devem ser somados. Exemplo: XI = 10 + 1 = 11. No entanto, se o número pequeno está à esquerda de um número maior que ele, ele deve ser subtraído. Exemplo: IX = 10 - 1 = 9.**
 
-## 11 - Uma pessoa que trabalha de carteira assinada no Brasil tem descontados de seu salário bruto o INSS e o IR. Faça um programa que, dado um salário bruto, calcule o líquido a ser recebido.
+2. Para o próximo exercício você irá precisar ter uma conta no CodeWars, para entender como fazê-lo acesse esse o conteúdo que fizemos sobre isso. Após seguir os passos para registro acesse o desafio proposto e então clique em TRAIN, você então será redirecionado para a página onde o desafio deve ser feito. Quando tiver finalizado o exercício clique em TEST para verificar, com testes simples, se sua solução satisfaz o que foi pedido. Passando nesses testes clique em ATTEMPT, ao fazer isso seu código passará por todos os testes existentes para validação da solução. Caso sua solução esteja correta o botão SUBMIT ficará disponível, clique nele para submeter sua resposta, caso contrário volte ao seu código e veja o que ainda não está satisfazendo o que se é pedido, repita esse processo até que sua solução esteja correta.
+  * Desafio - 16 + 8 = 214;
+  * Esse desafio irá exigir um pouco de conhecimento sobre alguns métodos do JavaScript, para isso pesquise quando for necessário e caso surja alguma dúvida peça ajuda no Slack. Dúvidas em como fazer uma boa pesquisa? Sem problemas! Acesse esse conteúdo sobre como pesquisar como uma pessoa desenvolvedora.
 
-* A notação para um salário de R$1500,10, por exemplo, deve ser 1500.10. Para as faixas de impostos, use as seguintes referências:
-
-### * INSS
-
-  * Salário bruto até R$ 1.556,94: alíquota de 8%
-
-  * Salário bruto de R$ 1.556,95 a R$ 2.594,92: alíquota de 9%
-
-  * Salário bruto de R$ 2.594,93 a R$ 5.189,82: alíquota de 11%
-
-  * Salário bruto acima de R$ 5.189,82: alíquota máxima de R$ 570,88
-
-### * IR
-
-  * Até R$ 1.903,98: isento de imposto de renda
-
-  * De R$ 1.903,99 a 2.826,65: alíquota de 7,5% e parcela de R$ 142,80 a deduzir do imposto
-
-  * De R$ 2.826,66 a R$ 3.751,05: alíquota de 15% e parcela de R$ 354,80 a deduzir do imposto
-
-  * De R$ 3.751,06 a R$ 4.664,68: alíquota de 22,5% e parcela de R$ 636,13 a deduzir do imposto
-
-  * Acima de R$ 4.664,68: alíquota de 27,5% e parcela de R$ 869,36 a deduzir do imposto.
-
-**Exemplo**: Uma pessoa possui o salário bruto de R$ 3.000,00. O cálculo será:
-
-  * O salário bruto está entre R$ 2.594,93 e R$ 5.189,82, então sua alíquota para INSS é de 11%. O INSS será 11% de R$ 3.000, ou seja,R$ 330,00.
-
-  * Para descobrir o salário-base, subtraia do salário bruto a alíquota do INSS: R$ 3.000,00 - R$ 330,00 = R$ 2.670,00.
-
-  * Para pegar o valor do IR, temos um salário (já deduzido o INSS) entre R$ 1.903,99 e 2.826,65, sendo a alíquota, então, de 7.5% com parcela de R$ 142,80 a deduzir do imposto. Assim, temos:
-
-  * R$ 2.670,00: salário com INSS já deduzido;
-
-  * 7.5%: alíquota de imposto de renda;
-
-  * R$ 142,00 parcela a se deduzir do imposto.
-
-  * Fazendo a conta, temos: (7,5% de R$ 2.670,00) - R$ 142,80 = R$ 57,45
-
-  * O último cálculo para conseguir o salário líquido é R$ 2.670,00 - R$ 57,45 (salário-base - valor IR) = R$ 2.612,55.
-
-Resultado: R$ 2.612,55. 
 
