@@ -1,4 +1,4 @@
-x = ["a"] + ["b"] + [1, 2, 3]
+x = ["a"] + ["b"] + [1, 2, 3, 4]
 print(x)
 # Como saber onde esta o 'b' ?
 print(x.index("b"))
